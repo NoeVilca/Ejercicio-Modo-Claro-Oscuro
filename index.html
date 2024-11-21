@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Claro y Oscuro</title>
+    <!-- Agregar enlace de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para el modo oscuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .dark-mode .table {
+            background-color: #333;
+            color: white;
+        }
+        .dark-mode .btn {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú con botones para alternar entre modo claro y oscuro -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mi Página Web</a>
+            <button class="btn btn-secondary" id="modoClaro">Modo Claro</button>
+            <button class="btn btn-dark" id="modoOscuro">Modo Oscuro</button>
+        </div>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Bienvenido a la Página Web</h1>
+
+        <!-- Imagen -->
+        <div class="text-center my-4">
+            <img src="img/fabricaBots.jpeg" width="500px" height="500px" alt="foto" class="img-fluid">
+        </div>
+
+        <!-- Tabla -->
+        <div class="my-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Ciudad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Doe</td>
+                        <td>30</td>
+                        <td>Buenos Aires</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>25</td>
+                        <td>Rosario</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Jane</td>
+                        <td>35</td>
+                        <td>La Plata</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Agregar jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Alternar entre modo claro y modo oscuro usando jQuery
+        $(document).ready(function() {
+            // Por defecto la página está en modo claro
+            let darkMode = false;
+
+            // Cambiar a modo claro
+            $('#modoClaro').click(function() {
+                if (darkMode) {
+                    $('body').removeClass('dark-mode');  // Eliminar clase de modo oscuro
+                    darkMode = false;
+                }
+            });
+
+            // Cambiar a modo oscuro
+            $('#modoOscuro').click(function() {
+                if (!darkMode) {
+                    $('body').addClass('dark-mode');  // Agregar clase de modo oscuro
+                    darkMode = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
